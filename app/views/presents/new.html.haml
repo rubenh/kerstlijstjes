@@ -1,0 +1,6 @@
+%h3 Voeg een cadeau toe aan je lijstje
+
+= simple_form_for(@present, html: { class: 'form-horizontal' }) do |f|
+  = f.input :title, label: 'Cadeau'
+
+  = f.submit 'Opslaan', class: 'btn btn-primary'

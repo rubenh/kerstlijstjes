@@ -1,0 +1,13 @@
+nl:
+  activerecord:
+    models:
+      user:
+        one: Gebruiker
+        other: Gebruikers
+    attributes:
+      user:
+        name: Naam
+        email: Email
+        password: Wachtwoord
+        password_confirmation: Bevestig wachtwoord
+        current_password: Huidig wachtwoord

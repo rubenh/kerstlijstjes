@@ -1,0 +1,25 @@
+%h3 Lijstje van #{@user.name}
+
+- if own_list?(@user)
+  = link_to "Voeg cadeau toe aan je lijstje",  new_present_path, class: 'btn btn-primary btn-default'
+
+%table.table.table-bordered.table-striped
+  - @presents.each do |present|
+    %tr
+      %td
+        %p= present.title
+
+        - if own_present?(present)
+          %td
+            = link_to 'Pas aan', edit_present_path(present), class: 'btn btn-primary btn-xs'
+            = link_to 'Verwijder', present_path(present), method: :delete, class: 'btn btn-danger btn-xs'
+        - else
+          %td
+            - if present.reserved?
+              Gereserveerd door #{present.reserver.name}
+
+              - if reserved_by_me?(present)
+                =link_to 'Annuleer', present_reservations_path(present), method: :delete, class: 'btn btn-danger btn-xs'
+
+            - else
+              = link_to "Reserveer", present_reservations_path(present), method: :post, class: 'btn btn-primary btn-xs'

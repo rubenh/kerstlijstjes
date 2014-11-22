@@ -1,0 +1,7 @@
+%h3 Verlanglijstjes voor kerst
+
+%table.table-striped.table.table-bordered
+  - @users.each do |user|
+    %tr
+      %td= user.name
+      %td= link_to "Bekijk lijstje", present_path(user.id), class: ['btn-primary', 'btn-xs', 'btn']
