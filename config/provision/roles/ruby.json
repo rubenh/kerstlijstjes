@@ -1,0 +1,15 @@
+{
+  "name": "ruby",
+  "description": "Ruby machine",
+  "json_class": "Chef::Role",
+
+  "default_attributes": {
+    "ruby_version": "2.1.5"
+  },
+
+  "run_list": ["recipe[apt]",
+    "recipe[build-essential]",
+    "recipe[ruby_build]",
+    "recipe[kerst::install_ruby]"]
+}
+

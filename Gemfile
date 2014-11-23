@@ -12,6 +12,10 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'berkshelf'
+gem 'knife-solo'
+gem 'chef', '11.16.0'
+
 group :development do
   gem 'capistrano', '~> 3.0.1'
   gem 'capistrano-bundler'

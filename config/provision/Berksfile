@@ -1,0 +1,13 @@
+ #-*- mode: ruby -*-
+ # vi: set ft=ruby :
+
+ source "http://api.berkshelf.com"
+
+ cookbook 'apache'
+ cookbook 'apt'
+ cookbook 'build-essential'
+ cookbook 'git'
+ cookbook 'java'
+ cookbook 'mysql'
+ cookbook 'passenger_apache2'
+ cookbook 'ruby_build'

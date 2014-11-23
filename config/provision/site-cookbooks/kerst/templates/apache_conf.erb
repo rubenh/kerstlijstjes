@@ -1,0 +1,37 @@
+<VirtualHost *:80>
+
+  ServerAdmin ruben.hartog@gmail.com
+  ServerName <%= @url %>
+  ServerAlias www.<%= @url %>
+
+  DocumentRoot <%= @public %>
+
+  RackBaseURI /
+  RailsEnv production
+  PassengerMinInstances 2
+  PassengerPreStart http://<%= @url %>/
+  PassengerDefaultRuby /usr/local/bin/ruby
+
+  <Directory <%= @public %>>
+    Options FollowSymLinks
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+  </Directory>
+
+  <FilesMatch "\.(ico|pdf|flv|jpe?g|png|gif|js|css|swf)$">
+    ExpiresActive On
+    ExpiresDefault "access plus 1 year"
+  </FilesMatch>
+
+  LogLevel info
+  ErrorLog /var/log/apache2/kerst-error.log
+  CustomLog /var/log/apache2/kerst-access.log combined
+
+  RewriteEngine On
+  RewriteLog /var/log/apache2/kerst-rewrite.log
+  RewriteLogLevel 0
+
+  TraceEnable off
+
+</VirtualHost>
