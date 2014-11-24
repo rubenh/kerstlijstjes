@@ -2,20 +2,20 @@
   "url": "33.33.33.10",
 
   "user": "deploy",
-  "user_password": "$1$B5MQjhtz$.lsE5HMrXV7vXIP/5qjQa/",
+  "user_password": "$1$kWjneN/z$JANDVI1EfBsR1BcO2BcqQ.",
   "group": "deploy",
   "stage": "demo",
 
   "database_name": "kerst_production",
   "database_host": "localhost",
   "database_user": "deploy",
-  "database_root_password": "G1+IyCfG2e?7Fgg",
-  "database_password": "Z245iDobP6@eUbX",
+  "database_root_password": "W9emBxvsx7ZQaxKrk9Jg",
+  "database_password": "2z22S6DkwaYDySFRbVEj",
 
   "mysql": {
-    "server_root_password": "1ggn'7/K3;d<RpV",
-    "server_repl_password": "2U2Zs8%U28&4YZ",
-    "server_debian_password": "O4@k3..G$<~<I}H"
+    "server_root_password": "W9emBxvsx7ZQaxKrk9Jg",
+    "server_repl_password": "W9emBxvsx7ZQaxKrk9Jg",
+    "server_debian_password": "W9emBxvsx7ZQaxKrk9Jg"
   },
 
   "directories": {
@@ -31,5 +31,5 @@
   "run_list": ["role[ruby]",
     "role[rails_application]",
     "role[webserver]",
-    "role[mysql_remote]"]
+    "role[mysql]"]
 }

@@ -1,0 +1,8 @@
+{
+  "name": "rails_application",
+  "description": "Rails",
+  "json_class": "Chef::Role",
+
+  "run_list": ["recipe[kerst]"]
+}
+

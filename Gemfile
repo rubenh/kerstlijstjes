@@ -12,9 +12,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'haml-rails'
 gem 'simple_form'
-gem 'berkshelf'
-gem 'knife-solo'
-gem 'chef', '11.16.0'
+gem 'mysql2'
 
 group :development do
   gem 'capistrano', '~> 3.0.1'
@@ -39,4 +37,10 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+end
+
+group :provision do
+  gem 'berkshelf'
+  gem 'knife-solo'
+  gem 'chef', '11.16.0'
 end
