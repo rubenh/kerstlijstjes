@@ -7,7 +7,7 @@ set :deploy_to, "/var/www/#{fetch(:application)}"
 set :rails_env, 'production'
 set :user, 'deploy'
 
-set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml}
 set :linked_dirs, %w{log public/system}
 
 set :bundle_without, "development test provision"
@@ -42,7 +42,7 @@ namespace :deploy do
     end
   end
 
-  after :publishing, :restart
+  # after :publishing, :restart
   after :finishing, 'deploy:cleanup'
 
 end

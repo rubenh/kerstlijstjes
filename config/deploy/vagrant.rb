@@ -9,13 +9,33 @@ role :app, %w{33.33.33.10}
 role :web, %w{33.33.33.10}
 role :db,  %w{33.33.33.10}
 
+def password
+  begin
+    roles(:app).each do |host|
+      on host.hostname do
+        capture(:echo, 'public key authentication?')
+      end
+    end
+  rescue SSHKit::Runner::ExecuteError
+    ask('Server password', nil)
+  end
+end
+
+set :password, password
+
+set :ssh_options, {
+  user: fetch(:user),
+  forward_agent: true,
+  auth_methods: %w(publickey password),
+  password: fetch(:password)
+}
+
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options

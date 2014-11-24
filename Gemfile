@@ -13,6 +13,7 @@ gem 'devise-i18n'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'mysql2'
+gem 'therubyracer'
 
 group :development do
   gem 'capistrano', '~> 3.0.1'

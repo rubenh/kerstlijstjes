@@ -11,7 +11,7 @@ end
 
 apache_conf = apache_conf_template
 
-template "/etc/apache2/sites-available/#{node[:url]}" do
+template "/etc/apache2/sites-available/#{node[:url]}.conf" do
   owner "root"
   group "root"
   source apache_conf
@@ -21,6 +21,6 @@ template "/etc/apache2/sites-available/#{node[:url]}" do
   })
 end
 
-link "/etc/apache2/sites-enabled/#{node[:url]}" do
-  to "/etc/apache2/sites-available/#{node[:url]}"
+link "/etc/apache2/sites-enabled/#{node[:url]}.conf" do
+  to "/etc/apache2/sites-available/#{node[:url]}.conf"
 end
