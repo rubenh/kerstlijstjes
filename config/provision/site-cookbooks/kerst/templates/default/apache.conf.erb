@@ -29,8 +29,7 @@
   CustomLog /var/log/apache2/kerst-access.log combined
 
   RewriteEngine On
-  RewriteLog /var/log/apache2/kerst-rewrite.log
-  RewriteLogLevel 0
+  LogLevel warn mod_rewrite.c:trace3
 
   TraceEnable off
 
