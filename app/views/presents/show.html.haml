@@ -7,7 +7,7 @@
   - @presents.each do |present|
     %tr
       %td
-        %p= present.title
+        %p{ class: ("strikethrough" if !own_present?(present) && present.reserved?)}= present.title
 
         - if own_present?(present)
           %td
