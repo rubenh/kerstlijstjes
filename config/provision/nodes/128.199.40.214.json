@@ -1,0 +1,35 @@
+{
+  "url": "128.199.40.214",
+
+  "user": "deploy",
+  "user_password": "$1$kWjneN/z$JANDVI1EfBsR1BcO2BcqQ.",
+  "group": "deploy",
+  "stage": "demo",
+
+  "database_name": "kerst_production",
+  "database_host": "localhost",
+  "database_user": "deploy",
+  "database_root_password": "W9emBxvsx7ZQaxKrk9Jg",
+  "database_password": "2z22S6DkwaYDySFRbVEj",
+
+  "mysql": {
+    "server_root_password": "W9emBxvsx7ZQaxKrk9Jg",
+    "server_repl_password": "W9emBxvsx7ZQaxKrk9Jg",
+    "server_debian_password": "W9emBxvsx7ZQaxKrk9Jg"
+  },
+
+  "directories": {
+    "deploy_to": "/var/www/kerst",
+    "shared_path": "/var/www/kerst/shared",
+    "shared_config_path": "/var/www/kerst/shared/config"
+  },
+
+  "apache": {
+    "public": "/var/www/kerst/current/public"
+  },
+
+  "run_list": ["role[ruby]",
+    "role[rails_application]",
+    "role[webserver]",
+    "role[mysql]"]
+}
